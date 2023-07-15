@@ -1,8 +1,8 @@
 <?php
-    const base_url = "http://localhost/Inventario/";
-    const host = "localhost";
-    const usuario = "root";
-    const pass = "";
-    const db = "inventarioventas";
+    const base_url = "https://tudominio.com/"
+    const host = "DB_HOST";
+    const usuario = "DB_USER";
+    const pass = "DB_PAS";
+    const db = "DB_NAME";
     const charset = "charset=utf8";
 ?>
