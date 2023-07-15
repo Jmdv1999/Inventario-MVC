@@ -1,6 +1,4 @@
-[https://img.shields.io/badge/coverage-80%25-yellowgreen](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white
-
+<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/>
 <h1 align="center">Inventario-MVC</h1>
 <p align="center">Sistema de inventario desarrollado con el patron MVC en PHP</p>
 <p align="center"><img src="https://www.webdevelopersnotes.com/wp-content/uploads/create-a-simple-home-page.png"/></p> 
