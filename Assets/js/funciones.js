@@ -608,6 +608,7 @@ function AbrirArqueo(e){
     http.send(new FormData(frm));
     http.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText)
         const res = JSON.parse(this.responseText);
         Alertas(res.msg, res.icono)
         $("#abrir-caja").modal("hide");
@@ -624,7 +625,6 @@ function CerrarCaja(){
   http.send();
   http.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      const res = JSON.parse(this.responseText);
       document.getElementById('titulo').innerHTML = 'Cierre de caja';
       document.getElementById('montoinicial').value = res.monto_inicial['monto_inicial']
       document.getElementById('montofinal').value = res.monto_total['total']
@@ -749,6 +749,7 @@ function frmProductos(e) {
     http.send(new FormData(frm));
     http.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+
         const res = JSON.parse(this.responseText);
         Alertas(res.msg, res.icono);
         frm.reset();
@@ -990,6 +991,7 @@ function cargarDetallesVentas() {
   http.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const res = JSON.parse(this.responseText);
+      
       let html = "";
       res.detalle.forEach((row) => {
         html += `<tr>
@@ -1037,6 +1039,7 @@ function borrarDetalle(id) {
   http.send();
   http.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText)
       const res = JSON.parse(this.responseText);
       if (res == "ok") {
         const Toast = Swal.mixin({
@@ -1128,6 +1131,7 @@ function vender(e) {
       http.send(new FormData(frm));
       http.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText)
           const res = JSON.parse(this.responseText);
           Alertas(res.msg, res.icono);
           cargarDetallesVentas();

@@ -1,5 +1,6 @@
 <?php
 class CajasModel extends Query{
+    private $id, $nombre, $estado;
     public function __construct(){
         parent::__construct();
     }

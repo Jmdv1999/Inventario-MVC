@@ -1,6 +1,7 @@
 <?php
 class ConfiguracionModel extends Query
 {
+    private $id, $rif, $nombre, $telefono, $correo, $direccion, $mensaje;
     public function __construct()
     {
         parent::__construct();
@@ -50,7 +51,12 @@ class ConfiguracionModel extends Query
     }
     public function getMasVendidos()
     {
-        $sql = "SELECT d.id_producto, d.cantidad, p.id, p.descripcion, SUM(d.cantidad) AS total FROM detalles_venta d INNER JOIN productos p ON p.id = d.id_producto GROUP BY d.id_producto ORDER BY d.cantidad DESC LIMIT 10";
+        $sql = "SELECT d.id_producto, p.id, p.descripcion, SUM(d.cantidad) AS total 
+            FROM detalles_venta d 
+            INNER JOIN productos p ON p.id = d.id_producto 
+            GROUP BY d.id_producto, p.id, p.descripcion 
+            ORDER BY total DESC 
+            LIMIT 10";
         $data = $this->selectAll($sql);
         return $data;
     }

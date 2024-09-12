@@ -58,7 +58,7 @@ class VentasModel extends Query{
         return $data;
     }
     public function calcularVenta(int $id_usuario){
-        $sql = "SELECT subtotal, SUM(subtotal) AS total FROM detalles_temp_ventas WHERE id_usuario = $id_usuario";
+        $sql = "SELECT id_usuario, SUM(subtotal) AS total FROM detalles_temp_ventas WHERE id_usuario = $id_usuario GROUP BY id_usuario";
         $data = $this->select($sql);
         return $data;
     }
@@ -76,7 +76,7 @@ class VentasModel extends Query{
     }
     public function registrarVenta(int $id_usuario, string $total, int $cliente){
         $sql = "INSERT INTO ventas(id_usuario, total, cliente, fecha, hora) VALUES (?, ?, ?, ?, ?)";
-        $datos = array($id_usuario, $total, $cliente, date('Y-m-d'), date('H-i-s'));
+        $datos = array($id_usuario, $total, $cliente, date('Y-m-d'), date('H:i:s'));
         $data = $this->guardar($sql, $datos);
         if($data == 1){
             $res = "ok";

@@ -36,7 +36,10 @@ class ComprasModel extends Query{
         return $data;
     }
     public function calcularCompra(int $id_usuario){
-        $sql = "SELECT subtotal, SUM(subtotal) AS total FROM detalles_temp_compras WHERE id_usuario = $id_usuario";
+        $sql = "SELECT subtotal, SUM(subtotal) AS total 
+            FROM detalles_temp_compras 
+            WHERE id_usuario = $id_usuario 
+            GROUP BY subtotal";
         $data = $this->select($sql);
         return $data;
     }

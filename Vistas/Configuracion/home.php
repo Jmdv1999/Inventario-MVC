@@ -94,7 +94,7 @@ include "Vistas/Templates/header.php";
     MasVendidos()
 
     function MasVendidos() {
-        const url = "http://localhost/Inventario/Configuracion/MasVendidos";
+        const url = "http://localhost/Inventario-MVC/Configuracion/MasVendidos";
         const http = new XMLHttpRequest();
         http.open("POST", url, true);
         http.send();
@@ -129,7 +129,7 @@ include "Vistas/Templates/header.php";
     ReporteStock()
 
     function ReporteStock() {
-        const url = "http://localhost/Inventario/Configuracion/ReporteStock";
+        const url = "http://localhost/Inventario-MVC/Configuracion/ReporteStock";
         const http = new XMLHttpRequest();
         http.open("POST", url, true);
         http.send();
